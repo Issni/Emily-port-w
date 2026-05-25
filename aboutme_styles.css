@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #FFFFFF;
+  background-color: #eff5f3;
+}
+
+section {
+  position: relative;
+  z-index: 5;
+}
+
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "im fell";
+  src:
+    url(fonts/IM_Fell_DW_Pica/IM_FELL_DW_Pica.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+.header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 10%;
+  /*background-color: #070707d5;*/
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: League Spartan;
+  font-weight: Regular;
+  background-color: #1a1a1aab;
+}
+
+#menu-icon {
+  font-size: 3rem;
+  color: tomato;
+  display: none;
+}
+.logo{
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  font-family: libre baskerville;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover{
+  transform: scale(1.1);
+}
+.navbar {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  gap: 6rem;
+}
+.navbar a{
+  display: block;
+  color: white;
+  font-size: 2rem;
+  margin-left: 0;
+}
+.navbar li{
+  position: relative;
+  padding-bottom: 10px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #444444cb;
+  list-style: none;
+  padding: 0;
+  min-width: 220px;
+
+  opacity: 0;
+  left: auto;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+  pointer-events: none;
+
+
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.navbar li:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.dropdown-menu li a{
+  width: 100%;
+  text-align: right;
+  font-size: 1.5rem;
+}
+.dropdown-menu li a:hover{
+  background: #555;
+}
+.p1{
+  position: relative;
+  min-height: 100vh;
+}
+.home{
+  background-image: url("svgs/about_me_cover.svg");
+  background-size: 100% auto;   
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-color: red;
+  height: 60vh;
+}
+.artist_statement {
+  background-color: #42804f;
+  padding: 4rem 10%;
+  height: 40vh;
+}
+.statement_text {
+  position: absolute;
+  text-align: center;
+  margin-top: 10rem;
+  left: 0;
+  width: 100%;
+  padding: 4rem 10%;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: normal;
+  font-family: libre baskerville;
+  letter-spacing: 5%;
+}
+.inline{
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 5%;
+
+}
+.artist{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.artist img{
+    width: 25vw;
+}
+.paragraph_about{
+  margin-bottom: 7%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+}
+.hello{
+  padding: 4rem 20%;
+  margin-top: 7%;
+  color: #42804f;
+  font-family: libre baskerville;
+  font-style: italic;
+  font-size: 6rem;
+  font-weight: 100;
+}
+.body_t{
+  padding: 0rem 20%;
+  color: black;
+  font-size: 1.7rem;
+  font-family: "Source Serif 4", serif;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  background: rgba(19,19,19,1);
+  bottom: 0;
+  left: 0;
+  padding: 4rem 10%;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.text {
+  color: rgb(255, 255, 255);
+  font-family: League Spartan;
+  font-weight: Regular;
+  font-size: 4rem;
+  opacity: 1;
+}
+
+.icon_links {
+  display: flex;
+  justify-content: space-between;
+  width: 155px;
+  height: 27px;
+}
+
+.contact a{  
+font-size: 1.8rem;
+color: white;
+margin-left: 4rem;
+font-weight: 500;
+font-family: League Spartan;
+}
+
+
+@media screen and (max-width: 768px) {
+  .grid-container_1 {
+    grid-template-columns: 1fr; /* stack top two images */
+  }
+  .svg3 {
+    grid-column: 1; /* full width anyway */
+  }
+
+}
+
+@media (max-width: 600px) {
+  .exhibition_title .exhibition-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Responsive adjustment for very small screens */
+@media (max-width: 500px) {
+  .exhibition {
+    grid-template-columns: 1fr; /* stack left and right vertically */
+  }
+  .right {
+    text-align: left;
+    margin-top: 2px;
+  }
+}
+/* Limit artist image size on very large screens */
+@media (min-width: 2000px) {
+  .artist img {
+    width: 20vw; /* smaller than 25vw for big screens */
+    max-height: 70vh; /* ensures it doesn’t cover the statement text */
+  }
+}
+/* Slightly larger font on bigger screens without stretching lines too much */
+@media (min-width: 2000px) {
+  .paragraph_about {
+    font-size: 2rem;
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 2000px) {
+  .exhibition_title {
+    padding: 0 20%;
+  }
+}
